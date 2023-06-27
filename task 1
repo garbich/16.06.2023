@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+//Task 1
+
+int main() {
+    
+
+    string input;
+    cout << "enter a string of length 10 consisting of lowercase english letters and digits: ";
+    cin >> input;
+
+    bool hasLetters = false;
+    bool hasDigits = false;
+
+    if (input.length() != 10) {
+        cout << "invalid input! the string must have a length of 10." << endl;
+        return 0;
+    }
+
+    for (size_t i = 0; i < input.length(); i++) {
+        if ((input[i] >= 'a' && input[i] <= 'z') || (input[i] >= 'A' && input[i] <= 'Z')) {
+            hasLetters = true;
+        }
+        else if (input[i] >= '0' && input[i] <= '9') {
+            hasDigits = true;
+        }
+    }
+
+    if (hasLetters && hasDigits) {
+        cout << "ANOTHER" << endl;
+    }
+    else if (hasLetters) {
+        cout << "LETTERS" << endl;
+    }
+    else if (hasDigits) {
+        cout << "DIGITS" << endl;
+    }
+
+  
+}
